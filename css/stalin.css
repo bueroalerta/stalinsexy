@@ -1,0 +1,655 @@
+/* Some generic classes */
+
+/* General things */
+a, a:hover, a:visited, a:link, a:active{
+	text-decoration: none;
+	color: inherit;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	min-width: 300px;
+	background-color: #FFFFFF;
+/*
+	background-image: url('http://farm6.staticflickr.com/5563/15010337342_afa2a7d17a_z.jpg');
+	http://wscont2.apps.microsoft.com/winstore/1x/e5ffae05-1e16-4a1e-af89-61565d9db705/Screenshot.51523.1000004.jpg
+	http://docstore.mik.ua/win95/pictures/r76.gif
+*/
+/*	background-image: url('http://step.polymtl.ca/~coyote/picturesd/linux/dosemu3.gif');*/
+	background-image: url('/wp-content/themes/stalincustom/img/wallpaper.jpg');
+	background-size: 100% auto;
+	background-position: left bottom;
+	background-repeat: repeat;
+}
+
+/* Anoverlay div for minimized things */
+/*
+.ss_overlay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -10;
+}
+
+.min_container {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	height: 300px;
+	z-index: 1000000;
+}
+*/
+
+.min_container {
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+	z-index: 100;
+}
+
+.max_container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 5%;
+	left: 0;
+
+	height: 95%;
+	width: 100%;
+
+	display: none;
+
+	background-color: #F3F3F3;
+	z-index: 99;
+}
+
+.max_container .ss_review_toolbar {
+	background-color: #00007F;
+	color: white;
+}
+
+.max_container .ss_review_toolbar span {
+	width: 80%;
+}
+
+.loading_wrap {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	text-align: center;
+
+	background-image: url('/wp-content/themes/stalincustom/img/glitch.gif');
+	background-position: left top;
+	background-repeat: repeat;
+	background-size: 100% auto;
+}
+
+.loading_wrap .box {
+	color: #FFFF00;
+	/* font-family: 'Roboto Slab', serif;*/
+	font-family: 'VT323', serif;
+	font-size: 150px;
+	font-weight: bold;
+	margin-top: 200px;
+	z-index: 1001;
+}
+
+.ss_min_wrap {
+	width: 150px;
+	display: inline-block;
+	margin: 3px;
+/*
+	-webkit-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    3px 3px 0px 0px rgba(50, 50, 50, 1);
+	box-shadow:         3px 3px 0px 0px rgba(50, 50, 50, 1);
+*/
+	-webkit-box-shadow: 3px 3px 0px 0px black;
+	-moz-box-shadow:    3px 3px 0px 0px black;
+	box-shadow:         3px 3px 0px 0px black;
+}
+
+.ss_min_wrap .ss_review_toolbar span {
+	width: 140px;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ss_min_wrap .ss_review_toolbar_button {
+	display: none;
+}
+
+/* HEADER */
+
+.ss_header {
+	text-align: center;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+.ss_header img {
+	width: 100%;
+}
+
+/*
+.ss_logo img {
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+	width: 600px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.ss_logo {
+	min-height: 200px;
+	font-size: 135px;
+	font-family: 'VT323', serif;
+	color: yellow;
+	font-weight: bold;
+	line-height: 1;
+}
+*/
+/* PREVIEWS */
+
+.ss_reviews_wrapper {
+	width: 90%;
+	max-width: 1400px;
+	min-width: 400px;
+	margin: 5px auto;
+	padding-right: 5px;
+}
+
+.ss_review_wrap {
+	width: 260px;
+	display: inline-block;
+	margin: 10px 2px 15px;
+/*
+	-webkit-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    3px 3px 0px 0px rgba(50, 50, 50, 1);
+	box-shadow:         3px 3px 0px 0px rgba(50, 50, 50, 1);
+*/
+	-webkit-box-shadow: 3px 3px 0px 0px black;
+	-moz-box-shadow:    3px 3px 0px 0px black;
+	box-shadow:         3px 3px 0px 0px black;
+}
+
+.ss_review_toolbar {
+	width: 100%;
+	height: 25px;
+	background-color: #7F787F;
+	color: #BFB8BF;
+}
+
+.ss_review_toolbar span {
+	font-family: 'Arimo', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 2px;
+	margin-left: 10px;
+	float: left;
+
+	width: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ss_review_toolbar_button {
+	display: block;
+	float: right;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 25px;
+	cursor: pointer;
+}
+
+.spacer {
+	float: right;
+	width: 5px;
+	cursor: default;
+}
+
+.ss_min_wrap:hover .ss_review_toolbar {
+	background-color: #00007F;
+	color: white;	
+}
+
+.ss_min_wrap .ss_review_toolbar {
+	cursor: pointer;
+}
+
+.ss_review_wrap:hover .ss_review_toolbar {
+	background-color: #00007F;
+	color: white;
+}
+
+.ss_review_preview {
+	width: 100%;
+	background: #FEFEFE;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	opacity: 1;
+/*	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+*/
+}
+
+.ss_review_wrap:nth-child(22n+1) .ss_review_preview {
+	background-color: #33CCCC;
+}
+
+.ss_review_wrap:nth-child(22n+2) .ss_review_preview {
+	background-color: #99FFFF;
+}
+
+.ss_review_wrap:nth-child(22n+3) .ss_review_preview {
+	background-color: #00CCFF;
+}
+
+.ss_review_wrap:nth-child(22n+4) .ss_review_preview {
+	background-color: #99FF99;
+}
+
+.ss_review_wrap:nth-child(22n+5) .ss_review_preview {
+	background-color: #CCFFCC;
+}
+
+.ss_review_wrap:nth-child(22n+6) .ss_review_preview {
+	background-color: #0099CC;
+}
+
+.ss_review_wrap:nth-child(22n+7) .ss_review_preview {
+	background-color: #CC99FF;
+}
+
+.ss_review_wrap:nth-child(22n+8) .ss_review_preview {
+	background-color: #FF99CC;
+}
+
+.ss_review_wrap:nth-child(22n+9) .ss_review_preview {
+	background-color: #CCFFFF;
+}
+
+.ss_review_wrap:nth-child(22n+10) .ss_review_preview {
+	background-color: #CCCCFF;
+}
+
+.ss_review_wrap:nth-child(22n+11) .ss_review_preview {
+	background-color: #99FF33;
+}
+
+.ss_review_wrap:nth-child(22n+12) .ss_review_preview {
+	background-color: #99FF66;
+}
+
+.ss_review_wrap:nth-child(22n+13) .ss_review_preview {
+	background-color: #66CCFF;
+}
+
+.ss_review_wrap:nth-child(22n+14) .ss_review_preview {
+	background-color: #FF99FF;
+}
+
+.ss_review_wrap:nth-child(22n+15) .ss_review_preview {
+	background-color: #33CCFF;
+}
+
+.ss_review_wrap:nth-child(22n+16) .ss_review_preview {
+	background-color: #33FFCC;
+}
+
+.ss_review_wrap:nth-child(22n+17) .ss_review_preview {
+	background-color: #00FF99;
+}
+
+.ss_review_wrap:nth-child(22n+18) .ss_review_preview {
+	background-color: #00FF66;
+}
+
+.ss_review_wrap:nth-child(22n+19) .ss_review_preview {
+	background-color: #33FFFF;
+}
+
+.ss_review_wrap:nth-child(22n+20) .ss_review_preview {
+	background-color: #00FFCC;
+}
+
+.ss_review_wrap:nth-child(22n+21) .ss_review_preview {
+	background-color: #6699FF;
+}
+
+/*
+.ss_review_wrap:nth-child(22n+1) .ss_review_preview {
+	background-color: #FF6633;
+}
+
+.ss_review_wrap:nth-child(22n+2) .ss_review_preview {
+	background-color: #FF9933;
+}
+
+.ss_review_wrap:nth-child(22n+3) .ss_review_preview {
+	background-color: #00CC99;
+}
+
+.ss_review_wrap:nth-child(22n+4) .ss_review_preview {
+	background-color: #FFCCFF;
+}
+
+.ss_review_wrap:nth-child(22n+5) .ss_review_preview {
+	background-color: #CCCCFF;
+}
+
+.ss_review_wrap:nth-child(22n+6) .ss_review_preview {
+	background-color: #66FF99;
+}
+
+.ss_review_wrap:nth-child(22n+7) .ss_review_preview {
+	background-color: #00CCCC;
+}
+
+.ss_review_wrap:nth-child(22n+8) .ss_review_preview {
+	background-color: #CC9999;
+}
+
+.ss_review_wrap:nth-child(22n+9) .ss_review_preview {
+	background-color: #99FF66;
+}
+
+.ss_review_wrap:nth-child(22n+10) .ss_review_preview {
+	background-color: #CCFF33;
+}
+
+.ss_review_wrap:nth-child(22n+11) .ss_review_preview {
+	background-color: #CCCC66;
+}
+
+.ss_review_wrap:nth-child(22n+12) .ss_review_preview {
+	background-color: #66FF66;
+}
+
+.ss_review_wrap:nth-child(22n+13) .ss_review_preview {
+	background-color: #99FFFF;
+}
+
+.ss_review_wrap:nth-child(22n+14) .ss_review_preview {
+	background-color: #9999FF;
+}
+
+.ss_review_wrap:nth-child(22n+15) .ss_review_preview {
+	background-color: #FFFFCC;
+}
+
+.ss_review_wrap:nth-child(22n+16) .ss_review_preview {
+	background-color: #CCCC99;
+}
+
+.ss_review_wrap:nth-child(22n+17) .ss_review_preview {
+	background-color: #FF0066;
+}
+
+.ss_review_wrap:nth-child(22n+18) .ss_review_preview {
+	background-color: #00FFCC;
+}
+
+.ss_review_wrap:nth-child(22n+19) .ss_review_preview {
+	background-color: #FF33CC;
+}
+
+.ss_review_wrap:nth-child(22n+20) .ss_review_preview {
+	background-color: #66FF66;
+}
+
+.ss_review_wrap:nth-child(22n+21) .ss_review_preview {
+	background-color: #CC99CC;
+}
+*/
+
+.ss_review_preview img {
+	width: 100%;
+/*	border-bottom: 1px solid rgba(50, 50, 50, 1);*/
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+}
+
+.ss_review_preview_cat {
+	text-transform: uppercase;
+	/*background-color: rgba(50, 50, 50, 1);*/
+	background-color: black;
+	color: white;
+/*	font-weight: bold;*/
+	font-family: 'Roboto Slab', serif;
+	font-size: 13px;
+	padding: 2px 5px 2px 5px;
+	/*border: 1px solid white;*/
+	margin: 0px 0px 5px 0px;
+}
+
+.ss_review_preview_title {
+	text-transform: uppercase;
+/*	color: rgba(50, 50, 50, 1);*/
+	color: black;
+	font-weight: bold;
+/*	font-family: 'Roboto Slab', serif !important;*/
+	font: 18px/18px Arial, sans-serif;
+	/*border-bottom: 1px solid rgba(50, 50, 50, 1);*/
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+}
+
+.ss_review_preview_text {
+/*	font: 18px/20px 'Courier New', sans-serif;*/
+	font: 18px/20px 'Ubuntu Mono', sans-serif;
+	/*color: #333;*/
+	color: black;
+	margin: 0;
+	margin-top: 10px;
+/*	text-align: justify;*/
+}
+
+/* "MORE" SECTION */
+.ss_more {
+	/*http://weirdopedia.org/wp-content/uploads/2012/08/transparent-head-fish.jpg*/
+	background-image: url('/wp-content/themes/stalincustom/img/more.jpg');
+	background-position: left middle;
+	background-repeat: repeat;
+	background-size: 100% auto;
+
+	height: 150px;
+	width: 100%;
+
+	text-align: center;
+}
+
+.ss_temp {
+/*	background-color: rgba(255,102,255, 0.3);
+	height: 100%;*/
+}
+
+.ss_more_button {
+	display: inline-block;
+	height: 40px;
+	width: 30%;
+	min-width: 270px;
+	margin-top: 55px;
+	vertical-align: middle;
+	cursor: pointer;
+
+	border-radius: 10px;
+	background-color: #E5FF00;
+	font-family: 'Roboto Slab', serif;
+	font-size: 2em;
+	color: black;
+}
+
+.ss_footer {
+	display: block;
+	text-align: center;
+	width: 100%;
+	margin-top: 2%;
+}
+
+.ss_footer_horse {
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+}
+
+.ss_footer_horse img
+{
+	width: 70%;
+}
+
+.ss_footer_bubble {
+    position: relative;
+
+	display: inline-block;	
+	width: 50%;
+
+    background: #E5FF00;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    margin-left: 1%;
+    margin-bottom: 2%;
+}
+
+.ss_footer_bubble p {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	line-height: 1.0;
+	color: black;
+
+	padding: 5px 5px 5px 5px;
+}
+
+
+.ss_footer_bubble:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -28px;
+    border-style: solid;
+    border-width: 14px 29px 14px 0;
+    border-color: transparent #E5FF00;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+/* REVIEW ITSELF */
+.ss_review
+{
+	display: block;
+	margin-left: 10%;
+	margin-right: 15%;
+	background-color: #FAFAFA;
+
+	padding: 15px 15px 15px 15px;
+	color: black;
+}
+
+.scrollable {
+	height: 91%;
+/*
+	margin-top: 2.3%;
+*/
+	margin-top: 15px;
+	margin-bottom: 25px; 
+	overflow:auto;
+}
+
+.ss_review_title
+{
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 25pt;
+	background-color: black;
+	color: white;
+}
+
+.ss_review p
+{
+	font-size: 18pt;
+	margin-top: 10px;
+	font-family: 'Arimo', sans-serif;
+	font-weight: normal;
+/*	text-align: justify; */
+	line-height: 1.1;
+	margin-bottom: 20px;
+}
+
+.ss_review img {
+	max-width: 90%;
+	height: auto;
+}
+
+/* COMMENTS SECTION */
+
+.comment-list,
+.comment-list ul ,
+.comment-list ol {
+	list-style-type: none;
+}
+
+.depth-1 {
+	background-color: #EAEAEA;
+	margin-bottom: 2%;
+}
+
+/* SMARTPHONE THINGS */
+@media screen and (max-device-width: 480px)
+{
+	.ss_header img {
+		width: 100%;
+	}
+
+	.ss_review_toolbar span {
+		font-size: 30px;	
+	}
+
+	.ss_review_preview_cat {
+		font-size: 30px;
+	}
+
+	.ss_review_preview_title {
+		font: 40px/40px Arial, sans-serif;
+	}
+
+	.ss_review_preview_text {
+		font: 40px/42px 'Ubuntu Mono', sans-serif;
+		margin-top: 20px;
+	}
+
+	.ss_review_toolbar {
+		height: 50px;
+	}
+
+	.ss_review_toolbar_button {
+		height: 50px;
+	}
+
+	.ss_review_toolbar_button img {
+		height: 50px;
+	}
+
+	.spacer {
+		width: 15px;
+	}
+}
